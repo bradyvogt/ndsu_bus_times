@@ -7,6 +7,17 @@
   border: 1px solid #ddd;
   padding: 8px;
 }
+
+.table-container {
+	display: flex;
+	justify-content: center;
+/* 	align-items: center; */
+}
+
+body {
+	margin: 10px;
+}
+
 /*.dropbtn {
   background-color: #04AA6D;
   color: white;
