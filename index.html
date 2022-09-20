@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bus Time Stops</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- <script type="text/javascript" src="time_stop_data.js" defer></script>
+	<script type="text/javascript" src="script.js" defer></script> -->
+</head>
+<body>
+	<h2>Current Time is <span id="date-time"></span></h2>
+	
+	<h3>Select Bus Stop</h3>
+	<form>
+		<select id = "stopList" onchange = "dropSelect()">
+			<option value="stop_1">NDSU Transit Hub</option>
+			<option value="stop_11">Niskanen</option>
+			<option value="stop_5">University Village</option>
+			<option value="stop_3">Klai Hall</option>
+			<option value="stop_4">Barry Hall</option>
+			<option value="stop_13">Renaissance Hall</option>
+			<option value="stop_6">SHAC</option>
+			<option value="stop_7">Centennial Blvd</option>
+			<option value="stop_8">Reed/Johnson Hall</option>
+			<option value="stop_9">Fargodome East</option>
+			<option value="stop_10">Casey's</option>
+			<option value="stop_2">Family Fare</option>
+			<option value="stop_14">GTC</option>
+		</select>
+		<p>Stop Selected: <span id="stop-choice"></span></p>
+	</form>
+	<!-- <p>Results: <span id="results"></span></p> -->
+	<table id="results-table">
+		<thead id="thead">
+			<tr>
+				<th>Bus #</th>
+				<th>Stop Time</th>
+				<th>Wait Time</th>
+			</tr>
+		</thead>
+		<tbody id="tableBody">
+		</tbody>
+	</table>
+  	<script type="text/javascript" src="time_stop_data.js"></script>
+  	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
