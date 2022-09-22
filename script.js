@@ -1,10 +1,11 @@
 //Current time
-let today = new Date('2000-01-01T10:47:00');
+let today = new Date('2000-01-01T10:10:00');
 const MINUTE_RANGE = 60;
 
 //Display 12hr time in page
 document.getElementById("date-time").innerHTML = toAmPm(today.getHours(),today.getMinutes());
 
+//TODO: Filter out weekend times
 //Executes default dropdown choice
 dropSelect();
 
@@ -12,7 +13,7 @@ dropSelect();
 function dropSelect() {
 	//Retrieves selected option from dropdown
 	let stopList = document.getElementById("stopList");  
-	document.getElementById("stop-choice").innerHTML = stopList.options[stopList.selectedIndex].text;
+	// document.getElementById("stop-choice").innerHTML = stopList.options[stopList.selectedIndex].text;
 	let stop_selection = window[stopList.options[stopList.selectedIndex].value]
 
 	//Gets array of times from selected stop

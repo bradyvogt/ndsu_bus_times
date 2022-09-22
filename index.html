@@ -5,15 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bus Time Stops</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<!-- <script type="text/javascript" src="time_stop_data.js" defer></script>
-	<script type="text/javascript" src="script.js" defer></script> -->
 </head>
 <body>
 	<h2>Current Time is <span id="date-time"></span></h2>
-	<p>HI</p>
 	<h3>Select Bus Stop</h3>
-	<form>
-		<select id = "stopList" onchange = "dropSelect()">
+	<form class="table-container">
+		<select class = "dropbtn" id = "stopList" onchange = "dropSelect()">
 			<option value="stop_1">NDSU Transit Hub</option>
 			<option value="stop_11">Niskanen</option>
 			<option value="stop_5">University Village</option>
@@ -28,20 +25,20 @@
 			<option value="stop_2">Family Fare</option>
 			<option value="stop_14">GTC</option>
 		</select>
-		<p>Stop Selected: <span id="stop-choice"></span></p>
 	</form>
-	<!-- <p>Results: <span id="results"></span></p> -->
-	<table id="results-table">
-		<thead id="thead">
-			<tr>
-				<th>Bus #</th>
-				<th>Stop Time</th>
-				<th>Wait Time</th>
-			</tr>
-		</thead>
-		<tbody id="tableBody">
-		</tbody>
-	</table>
+	<div class="table-container">
+		<table id="results-table">
+			<thead id="thead">
+				<tr>
+					<th>Bus #</th>
+					<th>Stop Time</th>
+					<th>Wait Time</th>
+				</tr>
+			</thead>
+			<tbody id="tableBody">
+			</tbody>
+		</table>
+	</div>
   	<script type="text/javascript" src="time_stop_data.js"></script>
   	<script type="text/javascript" src="script.js"></script>
 </body>
