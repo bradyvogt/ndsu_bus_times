@@ -1,13 +1,28 @@
 //Current time
-let today = new Date('2000-01-01T10:10:00');
+var today = new Date();
+updateTime();
 const MINUTE_RANGE = 60;
 
-//Display 12hr time in page
-document.getElementById("date-time").innerHTML = toAmPm(today.getHours(),today.getMinutes());
+//Update time every second
+setInterval(updateTime, 1000);
 
-//TODO: Filter out weekend times
-//Executes default dropdown choice
-dropSelect();
+//Filter out weekends for buses
+if(today.getDay() == 0 || today.getDay() == 6){
+	document.getElementById("message-box").innerHTML = "No Buses. Have a good weekend!";
+}else{
+	//Executes default dropdown choice
+	dropSelect();
+}
+
+function updateTime() {
+	today = new Date();
+	document.getElementById("date-time").innerHTML = today.toLocaleTimeString();
+	
+	//Update table times every minute
+	if(today.getSeconds() == 0){
+		dropSelect();
+	}
+}
 
 //Executed when dropdown is selected
 function dropSelect() {

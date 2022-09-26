@@ -5,6 +5,7 @@
 #results-table {
   border-collapse: collapse;
 }
+
 table, td, th {
   border: 1px solid var(--dark_green);
   padding: 8px;
@@ -21,7 +22,7 @@ table, td, th {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  width:  247px;
+  width: 247px;
 }
 
 body {
@@ -30,6 +31,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ffffff;
 }
+
+.dropdown-content a:hover {background-color: #bbaacc}
 
 /*.dropbtn {
   background-color: #0e541a;
