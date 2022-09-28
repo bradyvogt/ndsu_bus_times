@@ -1,4 +1,4 @@
-:root{
+ :root{
   --dark_green: #0e541a;
 }
 
@@ -9,6 +9,14 @@
 table, td, th {
   border: 1px solid var(--dark_green);
   padding: 8px;
+}
+table {
+  width: 275px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th{
+  background-color: #2a753c;
+  color: #ffffff;
 }
 
 .table-container{
@@ -22,7 +30,7 @@ table, td, th {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  width: 247px;
+  width: 275px;
 }
 
 body {
@@ -33,6 +41,8 @@ body {
 }
 
 .dropdown-content a:hover {background-color: #bbaacc}
+
+
 
 /*.dropbtn {
   background-color: #0e541a;

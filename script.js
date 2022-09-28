@@ -11,7 +11,7 @@ if(today.getDay() == 0 || today.getDay() == 6){
 	document.getElementById("message-box").innerHTML = "No Buses. Have a good weekend!";
 }else{
 	//Executes default dropdown choice
-	dropSelect();
+	updateStopTimes();
 }
 
 function updateTime() {
@@ -20,14 +20,15 @@ function updateTime() {
 	
 	//Update table times every minute
 	if(today.getSeconds() == 0){
-		dropSelect();
+		updateStopTimes();
 	}
 }
 
 //Executed when dropdown is selected
-function dropSelect() {
+function updateStopTimes() {
 	//Retrieves selected option from dropdown
-	let stopList = document.getElementById("stopList");  
+	let stopList = document.getElementById("stopList");
+
 	// document.getElementById("stop-choice").innerHTML = stopList.options[stopList.selectedIndex].text;
 	let stop_selection = window[stopList.options[stopList.selectedIndex].value]
 
