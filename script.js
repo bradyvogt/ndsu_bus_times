@@ -1,3 +1,6 @@
+//Set selection if there's one saved
+checkCookie("selection");
+
 //Current time
 var today = new Date();
 updateTime();
@@ -29,7 +32,9 @@ function updateStopTimes() {
 	//Retrieves selected option from dropdown
 	let stopList = document.getElementById("stopList");
 
-	// document.getElementById("stop-choice").innerHTML = stopList.options[stopList.selectedIndex].text;
+	//Remember selection for next time
+	setCookie("selection", stopList.value, 12);
+
 	let stop_selection = window[stopList.options[stopList.selectedIndex].value]
 
 	//Gets array of times from selected stop
@@ -120,4 +125,33 @@ function minuteDiff(startDate, endDate){
 	minute_diff = endDate.getMinutes() - startDate.getMinutes();
 
 	return hour_diff*60+minute_diff;
+}
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  document.cookie = cname + "=" + cvalue + ";expires=" + d.toUTCString();
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie(cname) {
+  let cvalue = getCookie(cname);
+  //Use valid cvalue? Maybe not because cvalue can only be set to valid value
+  if (cvalue != "") {
+    document.getElementById("dropSelect").value = cvalue;
+  }
 }
