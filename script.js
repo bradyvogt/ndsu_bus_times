@@ -1,10 +1,13 @@
+const MINUTE_RANGE = 60;
+const DEFAULT_STOP = "stop_1";
+
 //Set selection if there's one saved
-checkCookie("selection");
+let curr_cookie = checkCookie("selection");
+document.getElementById("stopList").value = curr_cookie;
 
 //Current time
 var today = new Date();
 updateTime();
-const MINUTE_RANGE = 60;
 
 //Update time every second
 setInterval(updateTime, 1000);
@@ -40,6 +43,12 @@ function updateStopTimes() {
 	//Gets array of times from selected stop
 	let array = getStopTimes(stop_selection, today, MINUTE_RANGE);
 
+	//If there is nothing display message
+	if(array[0] == null){
+		document.getElementById("message-box").innerHTML = `No Buses (Next ${MINUTE_RANGE} minutes)`;
+	}else{
+		document.getElementById("message-box").innerHTML = "";
+	}
 	//Creates html table from array
 	updateTable(array);
 }
@@ -150,8 +159,7 @@ function getCookie(cname) {
 
 function checkCookie(cname) {
   let cvalue = getCookie(cname);
-  //Use valid cvalue? Maybe not because cvalue can only be set to valid value
-  if (cvalue != "") {
-    document.getElementById("dropSelect").value = cvalue;
-  }
+  if(cvalue == ""){return DEFAULT_STOP}
+  else if(cvalue == null){return "null"}
+  else {return cvalue}
 }
