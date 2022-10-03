@@ -153,5 +153,7 @@ function checkCookie(cname) {
   //Use valid cvalue? Maybe not because cvalue can only be set to valid value
   if (cvalue != "") {
     document.getElementById("dropSelect").value = cvalue;
+  }else{
+    document.getElementById("dropSelect").value = "stop_1";
   }
 }
