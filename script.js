@@ -7,6 +7,7 @@ document.getElementById("stopList").value = curr_cookie;
 
 //Current time
 var today = new Date();
+var isWeekend = false;
 updateTime();
 
 //Update time every second
@@ -14,6 +15,7 @@ setInterval(updateTime, 1000);
 
 //Filter out weekends for buses
 if(today.getDay() == 0 || today.getDay() == 6){
+	isWeekend = true;
 	document.getElementById("message-box").innerHTML = "No Buses. Have a good weekend!";
 }else{
 	//Executes default dropdown choice
@@ -37,8 +39,10 @@ function updateStopTimes() {
 
 	//Remember selection for next time
 	setCookie("selection", stopList.value, 12);
-
 	let stop_selection = window[stopList.options[stopList.selectedIndex].value]
+
+	//Don't update times if weekend
+	if(isWeekend){return}
 
 	//Gets array of times from selected stop
 	let array = getStopTimes(stop_selection, today, MINUTE_RANGE);
