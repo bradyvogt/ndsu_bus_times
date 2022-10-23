@@ -136,7 +136,6 @@ function toAmPm(hours, minutes){
 function minuteDiff(startDate, endDate){
 	hour_diff = endDate.getHours() - startDate.getHours();
 	minute_diff = endDate.getMinutes() - startDate.getMinutes();
-
 	return hour_diff*60+minute_diff;
 }
 
