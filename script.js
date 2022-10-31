@@ -6,12 +6,12 @@ let curr_cookie = checkCookie("selection");
 document.getElementById("stopList").value = curr_cookie;
 
 //Current time
-var today = new Date();
+var today = new Date('2020-01-01T06:45:00');
 var isWeekend = false;
 updateTime();
 
 //Update time every second
-setInterval(updateTime, 1000);
+// setInterval(updateTime, 1000);
 
 //Filter out weekends for buses
 if(today.getDay() == 0 || today.getDay() == 6){
@@ -23,7 +23,7 @@ if(today.getDay() == 0 || today.getDay() == 6){
 }
 
 function updateTime() {
-	today = new Date();
+	today = new Date('2020-01-01T06:45:00');
 	document.getElementById("date-time").innerHTML = today.toLocaleTimeString();
 	
 	//Update table times every minute
@@ -102,7 +102,7 @@ function getStopTimes(busStopList, currDate, minuteRange){
 
 		//Assign stop info to array
 		if(minute_diff >= 0 && minute_diff <= minuteRange){
-			stops_array.push([busStopList[i].route, toAmPm(hour,minute), minute_diff])
+			stops_array.push([busStopList[i].route, toAmPm(hour,minute), minute_diff, busStopList[i].next_stop])
 		}
 	}
 	//Sort stops_array by Wait Time (asc)
