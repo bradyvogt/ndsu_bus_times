@@ -9,7 +9,7 @@
 <body>
 	<h2>Current Time: <span id="date-time"></span></h2>
 	<h3>Select Bus Stop</h3>
-	<form class="drop-container">
+	<div class="results-container">
 		<select class = "dropbtn" id = "stopList" onchange = "updateStopTimes()">
 			<option value="stop_1">NDSU Transit Hub</option>
 			<option value="stop_6">University Village</option>
@@ -31,8 +31,6 @@
 			<option value="stop_18">Family Fare</option>
 			<option value="stop_19">Dakota Drive</option>
 		</select>
-	</form>
-	<div class="table-container">
 		<table id="results-table">
 			<thead id="thead">
 				<tr>
@@ -45,8 +43,8 @@
 			<tbody id="tableBody">
 			</tbody>
 		</table>
+		<p id="message-box"></p>
 	</div>
-	<p id="message-box"></p>
   	<script type="text/javascript" src="stop_data_12_07_22.js"></script>
   	<script type="text/javascript" src="new_script.js"></script>
 </body>
