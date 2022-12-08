@@ -8,7 +8,10 @@ document.getElementById("stopList").value = curr_cookie;
 //Current time
 var today = new Date();
 var isWeekend = false;
-updateTime();
+window.addEventListener('load', (event) => {
+    console.log('DOM fully loaded and parsed');
+		updateTime();
+});
 
 //Update time every second
 setInterval(updateTime, 1000);
