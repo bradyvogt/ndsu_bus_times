@@ -37,8 +37,9 @@ th{
   background-color: var(--dark_green);
   color: #ffffff;
   padding: 10px;
-  font-size: 16px;
+  font-size: 16px;  
   border: none;
   cursor: pointer;
   width: 100%;
+/*  display: none;*/
 }

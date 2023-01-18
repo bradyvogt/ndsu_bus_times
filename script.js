@@ -55,6 +55,8 @@ function updateStopTimes() {
 	}
 	//Creates html table from array
 	updateTable(array);
+
+	console.log("Successful update")
 }
 
 //Updates data in table based on array data

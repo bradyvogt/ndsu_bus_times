@@ -10,27 +10,29 @@
 	<h2>Current Time: <span id="date-time"></span></h2>
 	<h3>Select Bus Stop</h3>
 	<div class="results-container">
-		<select class = "dropbtn" id = "stopList" onchange = "updateStopTimes()">
-			<option value="stop_1">NDSU Transit Hub</option>
-			<option value="stop_6">University Village</option>
-			<option value="stop_7">Niskanen</option>
-			<option value="stop_8">NDSU High Rises</option>
-			<option value="stop_2">Barry Hall</option>
-			<option value="stop_3">Rennaisance Hall</option>
-			<option value="stop_10">Reed/Johnson Hall</option>
-			<option value="stop_4">Minard East</option>
-			<option value="stop_5">Minard West</option>
-			<option value="stop_11">Klai Hall</option>
-			<option value="stop_9">Wellness Center</option>
-			<option value="stop_12">SHAC</option>
-			<option value="stop_13">Centennial Blvd</option>
-			<option value="stop_14">Fargodome East</option>
-			<option value="stop_15">Fargodome West</option>
-			<option value="stop_16">GTC</option>
-			<option value="stop_17">Casey's</option>
-			<option value="stop_18">Family Fare</option>
-			<option value="stop_19">Dakota Drive</option>
-		</select>
+		<div class="dropdown-container">	
+			<select class = "dropbtn" id = "stopList" onchange = "updateStopTimes()">
+				<option value="stop_1">NDSU Transit Hub</option>
+				<option value="stop_6">University Village</option>
+				<option value="stop_7">Niskanen</option>
+				<option value="stop_8">NDSU High Rises</option>
+				<option value="stop_2">Barry Hall</option>
+				<option value="stop_3">Rennaisance Hall</option>
+				<option value="stop_10">Reed/Johnson Hall</option>
+				<option value="stop_4">Minard East</option>
+				<option value="stop_5">Minard West</option>
+				<option value="stop_11">Klai Hall</option>
+				<option value="stop_9">Wellness Center</option>
+				<option value="stop_12">SHAC</option>
+				<option value="stop_13">Centennial Blvd</option>
+				<option value="stop_14">Fargodome East</option>
+				<option value="stop_15">Fargodome West</option>
+				<option value="stop_16">GTC</option>
+				<option value="stop_17">Casey's</option>
+				<option value="stop_18">Family Fare</option>
+				<option value="stop_19">Dakota Drive</option>
+			</select>
+		</div>	
 		<table id="results-table">
 			<thead id="thead">
 				<tr>
@@ -45,7 +47,7 @@
 		</table>
 		<p id="message-box"></p>
 	</div>
-  	<script type="text/javascript" src="stop_data_12_07_22.js"></script>
+  	<script type="text/javascript" src="stop_data_01_18_23.js"></script>
   	<script type="text/javascript" src="new_script.js"></script>
 </body>
 </html>
